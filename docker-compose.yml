@@ -1,0 +1,6 @@
+services:
+  scraper:
+    build: .
+    volumes:
+      - .:/app  # Ensure the current directory is mapped to the container's /app directory
+    command: scrapy crawl wwr -o /app/books.csv  # Save the file to the /app directory inside the container
